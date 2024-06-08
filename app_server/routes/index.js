@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const ctrlMain = require('../controllers/main');
+var tripsController = require('../../app_api/controllers/trips'); // Correct path
 
-/* GET home page. */
-router.get('/', ctrlMain.index);
+router.get('/trips', tripsController.tripsList);
+router.get('/trips/:tripCode', tripsController.tripsFindByCode);
 
 module.exports = router;
