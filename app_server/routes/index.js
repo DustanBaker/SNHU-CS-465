@@ -1,8 +1,18 @@
-var express = require('express');
-var router = express.Router();
-var tripsController = require('../../app_api/controllers/trips'); // Correct path
+const express = require('express');
+const router = express.Router();
 
-router.get('/trips', tripsController.tripsList);
-router.get('/trips/:tripCode', tripsController.tripsFindByCode);
+
+const tripsController = require('../../app_api/controllers/trips');
+
+router
+    .route('/trips')
+    .get(tripsController.tripsList)
+    .post(tripsController.tripsAddTrip);
+
+router
+    .route('/trips/:tripCode')
+    .get(tripsController.tripsFindByCode)
+    .put(tripsController.tripsUpdateTrip);
 
 module.exports = router;
+    
