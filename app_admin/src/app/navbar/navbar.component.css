@@ -1,0 +1,14 @@
+.navbar-end {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    margin-left: 1rem;
+  }
+  
+  .has-icon-left {
+    display: inline-flex;
+    align-items: center;
+  }
+  
